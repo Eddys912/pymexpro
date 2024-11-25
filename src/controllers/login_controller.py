@@ -17,7 +17,6 @@ class LoginController:
                 values = (user._email, user._password)
             cursor.execute(query, values)
             row = cursor.fetchone()
-            print(row)
             if row:
                 return UserModel(user=row[3], email=row[4], password=row[5])
             return {"message": "Credenciales inválidas."}

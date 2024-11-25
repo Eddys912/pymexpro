@@ -21,13 +21,10 @@ class DBConnection:
                 password=self.password,
                 database=self.database,
             )
-            print(f"Conexión exitosa a la bd: {self.database}")
             return self.conn
         except pymysql.MySQLError as e:
-            print(f"Error al conectar a la bd: {e}")
             return None
 
     def close(self):
         if self.conn:
             self.conn.close()
-            print(f"La conexión a la base de datos {self.database} fue cerrada")
