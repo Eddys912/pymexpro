@@ -11,7 +11,6 @@ class UserModel:
         self.db_connection = DBConnection()
 
     def _execute_query(self, query, params=None, fetch_one=False):
-        """Método interno para ejecutar consultas SQL."""
         try:
             conn = self.db_connection.connection()
             cursor = conn.cursor()

@@ -1,26 +1,7 @@
 from src.models.user_model import UserModel
-from src.database.connection import DBConnection
 
 
 class UserController:
-    def login(self, user: UserModel):
-        try:
-            db = DBConnection().connection()
-            cursor = db.cursor()
-            query = "SELECT * FROM users WHERE user=%s AND password=%s"
-            values = (user._user, user._password)
-            cursor.execute(query, values)
-            row = cursor.fetchone()
-            if row:
-                return UserModel(user=row[3], password=row[5])
-            return {"message": "Credenciales inválidas."}
-        except Exception as e:
-            print(f"Error en login: {e}")
-            return {"message": "Error en el inicio de sesión."}
-        finally:
-            cursor.close()
-            db.close()
-
     def get_all_users(self):
         try:
             user_model = UserModel()
