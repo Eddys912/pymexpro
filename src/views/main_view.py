@@ -6,3 +6,5 @@ class Main:
     def __init__(self):
         self.main = uic.loadUi("src/views/main_view.ui")
         self.main.show()
+
+        self.main.icon_bar.setHidden(True)

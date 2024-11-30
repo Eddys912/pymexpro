@@ -42,7 +42,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../../public/img/logo-pymexpro.png</pixmap>
+    <pixmap>../../public/logo-pymexpro.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -117,7 +117,7 @@ border-radius: 20px;</string>
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../../public/img/candado.png</pixmap>
+       <pixmap>../../public/icons/padlock.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -184,7 +184,7 @@ border-radius: 20px;</string>
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../../public/img/usuario.png</pixmap>
+       <pixmap>../../public/icons/user.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
