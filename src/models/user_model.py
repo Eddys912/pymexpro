@@ -30,7 +30,7 @@ class UserModel:
             self.db_connection.close()
 
     def get_all_users(self):
-        query = "SELECT * FROM users"
+        query = "SELECT first_name, last_name, user, email, password FROM users"
         users = self._execute_query(query)
         if users is None:
             return {"message": "Error al obtener los usuarios"}

@@ -45,7 +45,7 @@ QLineEdit, QComboBox, QDateEdit {
 }
 </string>
   </property>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="txt_title">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -74,7 +74,7 @@ QLineEdit, QComboBox, QDateEdit {
     <enum>Qt::Horizontal</enum>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>290</x>
@@ -88,7 +88,7 @@ QLineEdit, QComboBox, QDateEdit {
      <number>20</number>
     </property>
     <item>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="btn_create_user">
       <property name="cursor">
        <cursorShape>PointingHandCursor</cursorShape>
       </property>
@@ -108,7 +108,7 @@ border: 2px solid #070;</string>
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="btn_cancel">
       <property name="cursor">
        <cursorShape>PointingHandCursor</cursorShape>
       </property>
@@ -129,7 +129,7 @@ border: 2px solid #500;</string>
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>40</x>
@@ -163,7 +163,7 @@ border: 2px solid #500;</string>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit">
+         <widget class="QLineEdit" name="line_input_first_name">
           <property name="maximumSize">
            <size>
             <width>250</width>
@@ -196,7 +196,7 @@ border: 2px solid #500;</string>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_2">
+         <widget class="QLineEdit" name="line_input_last_name">
           <property name="maximumSize">
            <size>
             <width>250</width>
@@ -227,7 +227,7 @@ border: 2px solid #500;</string>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_3">
+         <widget class="QLineEdit" name="line_input_username">
           <property name="minimumSize">
            <size>
             <width>150</width>
@@ -257,7 +257,7 @@ border: 2px solid #500;</string>
          </widget>
         </item>
         <item>
-         <widget class="QDateEdit" name="dateEdit">
+         <widget class="QDateEdit" name="line_input_date">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
             <horstretch>0</horstretch>
@@ -287,7 +287,7 @@ border: 2px solid #500;</string>
          </widget>
         </item>
         <item>
-         <widget class="QComboBox" name="comboBox_2">
+         <widget class="QComboBox" name="cb_sex">
           <property name="minimumSize">
            <size>
             <width>150</width>
@@ -328,7 +328,7 @@ border: 2px solid #500;</string>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_6">
+       <widget class="QLineEdit" name="line_input_phone">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -358,7 +358,7 @@ border: 2px solid #500;</string>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_4"/>
+       <widget class="QLineEdit" name="line_input_email"/>
       </item>
      </layout>
     </item>
@@ -378,7 +378,7 @@ border: 2px solid #500;</string>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_5"/>
+       <widget class="QLineEdit" name="line_input_address"/>
       </item>
      </layout>
     </item>
@@ -386,5 +386,22 @@ border: 2px solid #500;</string>
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>btn_cancel</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>Dialog</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>510</x>
+     <y>569</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>601</x>
+     <y>569</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

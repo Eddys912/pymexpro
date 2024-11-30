@@ -29,16 +29,15 @@ class Login:
             user = UserModel(user=None, email=username_or_email, password=password)
         else:
             user = UserModel(user=username_or_email, email=None, password=password)
-        self.main = Main()
-        # user_controller = LoginController()
-        # res = user_controller.authenticate_user(user)
-        # if isinstance(res, dict) and "message" in res:
-        #     self.show_error(res["message"])
-        # elif isinstance(res, UserModel):
-        #     self.main = Main()
-        #     self.login.close()
-        # else:
-        #     self.show_error("Ha ocurrido un error inesperado. Intente nuevamente.")
+        user_controller = LoginController()
+        res = user_controller.authenticate_user(user)
+        if isinstance(res, dict) and "message" in res:
+            self.show_error(res["message"])
+        elif isinstance(res, UserModel):
+            self.main = Main()
+            self.login.close()
+        else:
+            self.show_error("Ha ocurrido un error inesperado. Intente nuevamente.")
 
     def validate_username(self, username):
         import re
