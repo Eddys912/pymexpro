@@ -9,16 +9,16 @@ class LoginController:
         try:
             db = DBConnection().connection()
             cursor = db.cursor()
-            if user._user:
-                query = "SELECT * FROM users WHERE user=%s AND password=%s"
-                values = (user._user, user._password)
+            if user._username:
+                query = "SELECT * FROM users WHERE username=%s AND password=%s"
+                values = (user._username, user._password)
             elif user._email:
                 query = "SELECT * FROM users WHERE email=%s AND password=%s"
                 values = (user._email, user._password)
             cursor.execute(query, values)
             row = cursor.fetchone()
             if row:
-                return UserModel(user=row[3], email=row[4], password=row[5])
+                return UserModel(username=row[4], email=row[8], password=row[7])
             return {"message": "Credenciales inválidas."}
         except Exception as e:
             print(f"Error en login: {e}")

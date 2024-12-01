@@ -26,9 +26,9 @@ class Login:
         self.login.lb_error.setText("")
 
         if "@" in username_or_email:
-            user = UserModel(user=None, email=username_or_email, password=password)
+            user = UserModel(username=None, email=username_or_email, password=password)
         else:
-            user = UserModel(user=username_or_email, email=None, password=password)
+            user = UserModel(username=username_or_email, email=None, password=password)
         user_controller = LoginController()
         res = user_controller.authenticate_user(user)
         if isinstance(res, dict) and "message" in res:
