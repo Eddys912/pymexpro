@@ -12,7 +12,7 @@ class UserModel:
         email="",
         phone="",
         role="",
-        is_active="",
+        is_active="True",
         birth_date="",
         registration_date="",
     ):
