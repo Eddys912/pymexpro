@@ -1,0 +1,5 @@
+1,Cortadora-01,Cortadora,100,Operativa,2022-10-01,2023-11-01,Carlos Ramírez,true
+2,Ensambladora-01,Ensambladora,200,Operativa,2022-12-01,2023-10-15,Ana González,true
+3,Pintadora-01,Pintadora,150,Mantenimiento,2023-02-01,2023-11-25,Luis Pérez,false
+4,Cortadora-02,Cortadora,120,Operativa,2023-03-01,2023-11-15,Carlos Ramírez,true
+5,Pulidora-01,Pulidora,80,Operativa,2023-05-01,2023-11-10,Ana González,true

@@ -1,0 +1,10 @@
+1,Eduardo,Peña,M,Eddys912,12345678,eddys912sc@gmail.com,720-5686792,Jefe de Turno,true,2002-07-29,2023-02-01 08:00:00
+2,Ana,González,F,ana,hashed5678,ana@empresa.com,555-2222222,Jefe de turno,true,1990-06-15,2023-02-01 08:00:00
+3,Luis,Pérez,M,luis,hashed9101,luis@empresa.com,555-3333333,Jefe de turno,true,1987-08-20,2023-03-01 08:00:00
+4,María,López,F,maria,hashed1213,maria@empresa.com,555-4444444,Operador,true,1995-03-12,2023-04-01 08:00:00
+5,Juan,Hernández,M,juan,hashed1415,juan@empresa.com,555-5555555,Operador,true,1992-11-22,2023-05-01 08:00:00
+6,Sofía,Martínez,F,sofia,hashed1617,sofia@empresa.com,555-6666666,Operador,true,1993-07-30,2023-06-01 08:00:00
+7,Javier,Morales,M,javier,hashed1819,javier@empresa.com,555-7777777,Operador,true,1988-10-05,2023-07-01 08:00:00
+8,Laura,García,F,laura,hashed2021,laura@empresa.com,555-8888888,Operador,true,1991-02-17,2023-08-01 08:00:00
+9,Diego,Torres,M,diego,hashed2223,diego@empresa.com,555-9999999,Administrador,true,1984-12-10,2023-09-01 08:00:00
+10,Claudia,Vargas,F,claudia,hashed2425,claudia@empresa.com,555-0000000,Operador,true,1996-01-25,2023-10-01 08:00:00

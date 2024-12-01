@@ -1,0 +1,3 @@
+1,Mañana,Línea de Muebles,2023-01-01 08:00:00
+2,Tarde,Línea de Plásticos,2023-02-01 08:00:00
+3,Noche,Línea de Pintura,2023-03-01 08:00:00

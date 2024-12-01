@@ -1,0 +1,10 @@
+1,Mesa de Madera,Mesa para comedor,500.00,800.00,50,Muebles,2023-01-10,true
+2,Silla de Plástico,Silla ligera y resistente,200.00,350.00,100,Muebles,2023-01-15,true
+3,Estante Metálico,Estante para almacenamiento,1000.00,1500.00,20,Almacenaje,2023-01-20,true
+4,Escritorio de Oficina,Escritorio ergonómico,700.00,1100.00,30,Muebles,2023-02-01,true
+5,Mesa Auxiliar,Mesa pequeña para sala,300.00,500.00,40,Muebles,2023-02-15,true
+6,Armario de Ropa,Armario con 2 puertas,1500.00,2500.00,15,Almacenaje,2023-03-01,true
+7,Lámpara de Pie,Lámpara moderna,200.00,400.00,60,Decoración,2023-03-10,true
+8,Sofá de Tela,Sofá de 3 plazas,2000.00,3500.00,10,Muebles,2023-03-20,true
+9,Cama King Size,Cama grande con cabecera,2500.00,4000.00,5,Dormitorio,2023-04-01,true
+10,Estantería Modular,Estantería configurable,800.00,1200.00,25,Almacenaje,2023-04-15,true
