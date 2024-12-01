@@ -4,7 +4,7 @@ from PyQt6.QtGui import QIcon
 from src.views.create_user import UserPage
 from src.controllers.user_controller import UserController
 
-COLUMN_WIDTHS = [90, 160, 80, 80, 120, 100, 120, 50, 110]
+COLUMN_WIDTHS = [120, 80, 80, 150, 80, 100, 50, 50, 110]
 
 
 class Main:
@@ -41,7 +41,7 @@ class Main:
             table.setColumnWidth(index, width)
 
     def user_form(self):
-        self.main = UserPage()
+        self.user_page = UserPage()
 
     def page_users(self):
         self.main.stackedWidget.setCurrentIndex(0)
