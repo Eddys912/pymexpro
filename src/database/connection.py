@@ -20,6 +20,7 @@ class DBConnection:
                 user=self.user,
                 password=self.password,
                 database=self.database,
+                cursorclass=pymysql.cursors.DictCursor,
             )
             return self.conn
         except pymysql.MySQLError as e:

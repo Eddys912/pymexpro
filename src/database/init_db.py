@@ -56,6 +56,7 @@ if __name__ == "__main__":
         "role",
         "is_active",
         "birth_date",
+        "address",
         "registration_date",
     ]
     columns_products = [
