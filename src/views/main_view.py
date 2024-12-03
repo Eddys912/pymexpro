@@ -45,10 +45,10 @@ class Main:
 
     def setup_buttons(self):
         self.export_pdf = ExportPDF(
-            self.main.table_users, self.main, "Reporte de Usarios"
+            self.main.table_users, self.main, "Reporte de Usuarios"
         )
         self.export_excel = ExportExcel(
-            self.main.table_users, self.main, "Reporte de Usarios"
+            self.main.table_users, self.main, "Reporte de Usuarios"
         )
         button_groups = [
             (self.main.btn_users, self.main.btn_users_2, self.navigate_to_users),

@@ -89,7 +89,7 @@ def create_table_machines(conn):
                 installation_date DATE NOT NULL,
                 last_maintenance DATE,
                 responsible VARCHAR(100),
-                is_active BOOLEAN DEFAULT TRUE
+                is_active TINYINT(1) DEFAULT 1
             )
         """
         )
