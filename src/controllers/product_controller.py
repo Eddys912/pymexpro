@@ -1,5 +1,6 @@
 from src.models.product_model import ProductModel
 
+
 class ProductController:
     def get_all_products(self):
         try:
@@ -10,7 +11,16 @@ class ProductController:
             print(f"Error al obtener productos: {e}")
             return {"message": "Error al obtener productos."}
 
-    def create_product(self, product_name, description, production_cost, sale_price, stock, category, creation_date):
+    def create_product(
+        self,
+        product_name,
+        description,
+        production_cost,
+        sale_price,
+        stock,
+        category,
+        creation_date,
+    ):
         try:
             if not all([product_name, production_cost, sale_price, creation_date]):
                 return {"message": "Los campos obligatorios no pueden estar vacíos."}
@@ -21,7 +31,7 @@ class ProductController:
                 sale_price=sale_price,
                 stock=stock,
                 category=category,
-                creation_date=creation_date
+                creation_date=creation_date,
             )
             return new_product.create_product()
         except Exception as e:
@@ -34,7 +44,7 @@ class ProductController:
             existing_product = product_model.get_product_by_id(product_id)
             if not existing_product:
                 return {"message": "El producto no existe."}
-            
+
             updated_product = ProductModel(
                 product_name=kwargs.get("product_name", existing_product[1]),
                 description=kwargs.get("description", existing_product[2]),
@@ -43,7 +53,7 @@ class ProductController:
                 stock=kwargs.get("stock", existing_product[5]),
                 category=kwargs.get("category", existing_product[6]),
                 creation_date=kwargs.get("creation_date", existing_product[7]),
-                is_active=kwargs.get("is_active", existing_product[8])
+                is_active=kwargs.get("is_active", existing_product[8]),
             )
             return updated_product.update_product(product_id)
         except Exception as e:

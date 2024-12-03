@@ -1,7 +1,10 @@
 from src.database.connection import DBConnection
 
+
 class ManagerModel:
-    def __init__(self, manager_id=0, shift="", responsible_area="", registration_date=""):
+    def __init__(
+        self, manager_id=0, shift="", responsible_area="", registration_date=""
+    ):
         self._manager_id = manager_id
         self._shift = shift
         self._responsible_area = responsible_area

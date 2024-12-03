@@ -1,5 +1,6 @@
 from src.models.manager_model import ManagerModel
 
+
 class ManagerController:
     def get_all_managers(self):
         try:
@@ -15,9 +16,7 @@ class ManagerController:
             if not all([manager_id, shift, responsible_area]):
                 return {"message": "Todos los campos son obligatorios."}
             new_manager = ManagerModel(
-                manager_id=manager_id,
-                shift=shift,
-                responsible_area=responsible_area
+                manager_id=manager_id, shift=shift, responsible_area=responsible_area
             )
             return new_manager.create_manager()
         except Exception as e:
@@ -30,11 +29,11 @@ class ManagerController:
             existing_manager = manager_model.get_manager_by_id(manager_id)
             if not existing_manager:
                 return {"message": "El gerente no existe."}
-            
+
             updated_manager = ManagerModel(
                 manager_id=manager_id,
                 shift=kwargs.get("shift", existing_manager[1]),
-                responsible_area=kwargs.get("responsible_area", existing_manager[2])
+                responsible_area=kwargs.get("responsible_area", existing_manager[2]),
             )
             return updated_manager.update_manager(manager_id)
         except Exception as e:

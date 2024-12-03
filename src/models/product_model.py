@@ -1,5 +1,6 @@
 from src.database.connection import DBConnection
 
+
 class ProductModel:
     def __init__(
         self,

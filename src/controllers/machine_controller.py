@@ -1,5 +1,6 @@
 from src.models.machine_model import MachineModel
 
+
 class MachineController:
     def get_all_machines(self):
         try:
@@ -10,7 +11,16 @@ class MachineController:
             print(f"Error al obtener máquinas: {e}")
             return {"message": "Error al obtener máquinas."}
 
-    def create_machine(self, machine_name, type, production_capacity, status, installation_date, last_maintenance, responsible):
+    def create_machine(
+        self,
+        machine_name,
+        type,
+        production_capacity,
+        status,
+        installation_date,
+        last_maintenance,
+        responsible,
+    ):
         try:
             if not all([machine_name, type, installation_date]):
                 return {"message": "Los campos obligatorios no pueden estar vacíos."}
@@ -21,7 +31,7 @@ class MachineController:
                 status=status,
                 installation_date=installation_date,
                 last_maintenance=last_maintenance,
-                responsible=responsible
+                responsible=responsible,
             )
             return new_machine.create_machine()
         except Exception as e:
@@ -34,16 +44,18 @@ class MachineController:
             existing_machine = machine_model.get_machine_by_id(machine_id)
             if not existing_machine:
                 return {"message": "La máquina no existe."}
-            
+
             updated_machine = MachineModel(
                 machine_name=kwargs.get("machine_name", existing_machine[1]),
                 type=kwargs.get("type", existing_machine[2]),
-                production_capacity=kwargs.get("production_capacity", existing_machine[3]),
+                production_capacity=kwargs.get(
+                    "production_capacity", existing_machine[3]
+                ),
                 status=kwargs.get("status", existing_machine[4]),
                 installation_date=kwargs.get("installation_date", existing_machine[5]),
                 last_maintenance=kwargs.get("last_maintenance", existing_machine[6]),
                 responsible=kwargs.get("responsible", existing_machine[7]),
-                is_active=kwargs.get("is_active", existing_machine[8])
+                is_active=kwargs.get("is_active", existing_machine[8]),
             )
             return updated_machine.update_machine(machine_id)
         except Exception as e:
