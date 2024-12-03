@@ -2,25 +2,7 @@ from src.database.connection import DBConnection
 
 
 class MachineModel:
-    def __init__(
-        self,
-        machine_name="",
-        type="",
-        production_capacity=0,
-        status="Operativa",
-        installation_date="",
-        last_maintenance="",
-        responsible="",
-        is_active=True,
-    ):
-        self._machine_name = machine_name
-        self._type = type
-        self._production_capacity = production_capacity
-        self._status = status
-        self._installation_date = installation_date
-        self._last_maintenance = last_maintenance
-        self._responsible = responsible
-        self._is_active = is_active
+    def __init__(self):
         self.db_connection = DBConnection()
 
     def _execute_query(self, query, params=None, fetch_one=False):
@@ -32,10 +14,10 @@ class MachineModel:
             conn.commit()
             return result
         except Exception as e:
-            print(f"Error al ejecutar la consulta: {e}")
-            return None
+            raise Exception(f"Error al ejecutar la consulta: {e}")
         finally:
-            cursor.close()
+            if cursor:
+                cursor.close()
             self.db_connection.close()
 
     def get_all_machines(self):
@@ -46,29 +28,25 @@ class MachineModel:
         query = "SELECT * FROM machines WHERE machine_id = %s"
         return self._execute_query(query, (machine_id,), fetch_one=True)
 
-    def create_machine(self):
+    def create_machine(self, machine_data):
         query = """
             INSERT INTO machines (
-                machine_name, type, production_capacity, status, installation_date, last_maintenance, responsible, is_active
+                machine_name, type, production_capacity, status, installation_date, last_maintenance, responsible
             )
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+            VALUES (%s, %s, %s, %s, %s, %s, %s)
         """
         values = (
-            self._machine_name,
-            self._type,
-            self._production_capacity,
-            self._status,
-            self._installation_date,
-            self._last_maintenance,
-            self._responsible,
-            self._is_active,
+            machine_data["machine_name"],
+            machine_data["type"],
+            machine_data["production_capacity"],
+            machine_data["status"],
+            machine_data["installation_date"],
+            machine_data["last_maintenance"],
+            machine_data["responsible"]
         )
-        result = self._execute_query(query, values)
-        if result is None:
-            return {"message": "Error al crear máquina"}
-        return {"message": "Máquina creada correctamente"}
+        return self._execute_query(query, values)
 
-    def update_machine(self, machine_id):
+    def update_machine(self, machine_id, machine_data):
         query = """
             UPDATE machines
             SET machine_name=%s, type=%s, production_capacity=%s, status=%s, installation_date=%s, 
@@ -76,24 +54,18 @@ class MachineModel:
             WHERE machine_id=%s
         """
         values = (
-            self._machine_name,
-            self._type,
-            self._production_capacity,
-            self._status,
-            self._installation_date,
-            self._last_maintenance,
-            self._responsible,
-            self._is_active,
+            machine_data["machine_name"],
+            machine_data["type"],
+            machine_data["production_capacity"],
+            machine_data["status"],
+            machine_data["installation_date"],
+            machine_data["last_maintenance"],
+            machine_data["responsible"],
+            machine_data["is_active"],
             machine_id,
         )
-        result = self._execute_query(query, values)
-        if result is None:
-            return {"message": "Error al actualizar máquina"}
-        return {"message": "Máquina actualizada correctamente"}
+        return self._execute_query(query, values)
 
     def delete_machine(self, machine_id):
         query = "DELETE FROM machines WHERE machine_id = %s"
-        result = self._execute_query(query, (machine_id,))
-        if result is None:
-            return {"message": "Error al eliminar máquina"}
-        return {"message": "Máquina eliminada correctamente"}
+        return self._execute_query(query, (machine_id,))
