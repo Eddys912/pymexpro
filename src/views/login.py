@@ -9,35 +9,35 @@ class Login:
         self.login = uic.loadUi("src/views/login.ui")
         self.login.line_user.setFocus()
         self.login.show()
+
+        self.login_controller = LoginController()
+
         self.init()
 
     def init(self):
         self.login.btn_access.clicked.connect(self.validate_login_form)
 
     def validate_login_form(self):
-        username_or_email = self.login.line_user.text().strip()
-        password = self.login.line_password.text().strip()
 
-        if not self.validate_username(username_or_email):
+        credentials_data = {
+            "username_or_email": self.login.line_user.text().strip(),
+            "password": self.login.line_password.text().strip(),
+        }
+
+        if not self.validate_username(credentials_data["username_or_email"]):
             return
-        if not self.validate_password(password):
+        if not self.validate_password(credentials_data["password"]):
             return
 
         self.login.lb_error.setText("")
 
-        if "@" in username_or_email:
-            user = UserModel(username=None, email=username_or_email, password=password)
-        else:
-            user = UserModel(username=username_or_email, email=None, password=password)
-        user_controller = LoginController()
-        res = user_controller.authenticate_user(user)
-        if isinstance(res, dict) and "message" in res:
-            self.show_error(res["message"])
-        elif isinstance(res, UserModel):
+        res = self.login_controller.authenticate_user(credentials_data)
+
+        if res.get("success"):
             self.main = Main()
             self.login.close()
         else:
-            self.show_error("Ha ocurrido un error inesperado. Intente nuevamente.")
+            self.show_error(res["message"])
 
     def validate_username(self, username):
         import re

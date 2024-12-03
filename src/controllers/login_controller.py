@@ -1,30 +1,27 @@
 from src.models.user_model import UserModel
-from src.database.connection import DBConnection
 
 
 class LoginController:
-    def authenticate_user(self, user: UserModel):
-        cursor = None
-        db = None
+    def __init__(self):
+        self.user_model = UserModel()
+
+    def authenticate_user(self, credentials_data):
         try:
-            db = DBConnection().connection()
-            cursor = db.cursor()
-            if user._username:
-                query = "SELECT * FROM users WHERE username=%s AND password=%s"
-                values = (user._username, user._password)
-            elif user._email:
-                query = "SELECT * FROM users WHERE email=%s AND password=%s"
-                values = (user._email, user._password)
-            cursor.execute(query, values)
-            row = cursor.fetchone()
-            if row:
-                return UserModel(username=row[4], email=row[8], password=row[7])
-            return {"message": "Credenciales inválidas."}
+            if "@" in credentials_data["username_or_email"]:
+                user = self.user_model.get_user_by_email(
+                    credentials_data["username_or_email"]
+                )
+            else:
+                user = self.user_model.get_user_by_username(
+                    credentials_data["username_or_email"]
+                )
+            if not user:
+                return {"success": False, "message": "Usuario o correo no encontrado."}
+
+            if user["password"] != credentials_data["password"]:
+                return {"success": False, "message": "Contraseña incorrecta."}
+
+            return {"success": True, "message": "Autenticación exitosa.", "user": user}
+
         except Exception as e:
-            print(f"Error en login: {e}")
-            return {"message": "No se puede acceder al sistema, intentarlo más tarde."}
-        finally:
-            if cursor:
-                cursor.close()
-            if db:
-                db.close()
+            return {"success": False, "message": f"Error al autenticar usuario: {e}"}
