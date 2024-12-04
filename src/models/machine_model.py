@@ -57,10 +57,18 @@ class MachineModel:
         values = (
             machine_data["machine_name"],
             machine_data["type"],
-            int(machine_data["production_capacity"]) if machine_data["production_capacity"] else None,
+            (
+                int(machine_data["production_capacity"])
+                if machine_data["production_capacity"]
+                else None
+            ),
             machine_data["status"],
             machine_data["installation_date"],
-            machine_data["last_maintenance"] if machine_data["last_maintenance"] else None,
+            (
+                machine_data["last_maintenance"]
+                if machine_data["last_maintenance"]
+                else None
+            ),
             machine_data["responsible"],
         )
         return self._execute_query(query, values)

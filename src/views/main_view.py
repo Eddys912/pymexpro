@@ -53,7 +53,9 @@ class Main:
         self.main.btn_add_machine.clicked.connect(self.page_machine.form_create_machine)
         self.main.btn_export_excel.clicked.connect(self.export_excel.export_to_excel)
         self.main.btn_export_pdf.clicked.connect(self.export_pdf.export_to_pdf)
-        self.main.btn_export_excel_2.clicked.connect(self.export_excel_2.export_to_excel)
+        self.main.btn_export_excel_2.clicked.connect(
+            self.export_excel_2.export_to_excel
+        )
         self.main.btn_export_pdf_2.clicked.connect(self.export_pdf_2.export_to_pdf)
 
         self.main.btn_add_user.clicked.connect(self.page_user.load_users)

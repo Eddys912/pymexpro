@@ -33,7 +33,9 @@ class FormUpdateUser:
             "first_name": self.user_page.line_input_first_name.text().strip(),
             "last_name": self.user_page.line_input_last_name.text().strip(),
             "username": self.user_page.line_input_username.text().strip(),
-            "birth_date": self.user_page.cb_birth_date.dateTime().toString("yyyy-MM-dd HH:mm:ss"),
+            "birth_date": self.user_page.cb_birth_date.dateTime().toString(
+                "yyyy-MM-dd HH:mm:ss"
+            ),
             "gender": self.user_page.cb_sex.currentText(),
             "phone": self.user_page.line_input_phone.text().strip(),
             "role": self.user_page.cb_role.currentText(),

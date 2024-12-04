@@ -17,10 +17,16 @@ class FormUpdateMachine:
     def set_values(self, machine_data):
         self.machine_page.line_input_machine_name.setText(machine_data["machine_name"])
         self.machine_page.cb_type.setCurrentText(machine_data["type"])
-        self.machine_page.line_input_capacity.setText(str(machine_data["production_capacity"]))
+        self.machine_page.line_input_capacity.setText(
+            str(machine_data["production_capacity"])
+        )
         self.machine_page.cb_status.setCurrentText(machine_data["status"])
-        self.machine_page.cb_date_installation.setDate(machine_data["installation_date"])
-        self.machine_page.cb_date_last_maintenance.setDate(machine_data["last_maintenance"])
+        self.machine_page.cb_date_installation.setDate(
+            machine_data["installation_date"]
+        )
+        self.machine_page.cb_date_last_maintenance.setDate(
+            machine_data["last_maintenance"]
+        )
         self.machine_page.line_input_responsible.setText(machine_data["responsible"])
 
         is_active_text = "Activa" if machine_data["is_active"] == 1 else "Inactiva"
@@ -33,16 +39,24 @@ class FormUpdateMachine:
             "type": self.machine_page.cb_type.currentText(),
             "production_capacity": self.machine_page.line_input_capacity.text().strip(),
             "status": self.machine_page.cb_status.currentText(),
-            "installation_date": self.machine_page.cb_date_installation.date().toString("yyyy-MM-dd"),
-            "last_maintenance": self.machine_page.cb_date_last_maintenance.date().toString("yyyy-MM-dd"),
+            "installation_date": self.machine_page.cb_date_installation.date().toString(
+                "yyyy-MM-dd"
+            ),
+            "last_maintenance": self.machine_page.cb_date_last_maintenance.date().toString(
+                "yyyy-MM-dd"
+            ),
             "responsible": self.machine_page.line_input_responsible.text().strip(),
-            "is_active": 1 if self.machine_page.cb_is_active.currentText() == "Activa" else 0
+            "is_active": (
+                1 if self.machine_page.cb_is_active.currentText() == "Activa" else 0
+            ),
         }
 
         if not self.validate_form_fields(machine_data):
             return
 
-        result = self.machine_controller.update_machine(machine_data["machine_id"], machine_data)
+        result = self.machine_controller.update_machine(
+            machine_data["machine_id"], machine_data
+        )
 
         if result["success"]:
             QMessageBox.information(self.machine_page, "Éxito", result["message"])
