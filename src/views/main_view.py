@@ -15,7 +15,7 @@ from src.views.form_update_user import FormUpdate
 from src.utils.export_excel import ExportExcel
 from src.utils.export_pdf import ExportPDF
 
-COLUMN_WIDTHS = [120, 100, 80, 150, 80, 10, 80, 120, 40]
+COLUMN_WIDTHS = [120, 100, 100, 100, 90, 100, 80, 90, 40]
 COLUMN_KEYS = [
     "full_name",
     "role",

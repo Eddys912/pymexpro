@@ -39,7 +39,7 @@
       <x>0</x>
       <y>0</y>
       <width>1251</width>
-      <height>651</height>
+      <height>765</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_3">
@@ -126,10 +126,10 @@ QPushButton:hover {
         <item>
          <spacer name="verticalSpacer">
           <property name="orientation">
-           <enum>Qt::Vertical</enum>
+           <enum>Qt::Orientation::Vertical</enum>
           </property>
           <property name="sizeType">
-           <enum>QSizePolicy::Fixed</enum>
+           <enum>QSizePolicy::Policy::Fixed</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
@@ -323,7 +323,7 @@ QPushButton:hover {
         <item>
          <spacer name="verticalSpacer_2">
           <property name="orientation">
-           <enum>Qt::Vertical</enum>
+           <enum>Qt::Orientation::Vertical</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
@@ -480,10 +480,10 @@ QPushButton:hover {
         <item>
          <spacer name="verticalSpacer_3">
           <property name="orientation">
-           <enum>Qt::Vertical</enum>
+           <enum>Qt::Orientation::Vertical</enum>
           </property>
           <property name="sizeType">
-           <enum>QSizePolicy::Fixed</enum>
+           <enum>QSizePolicy::Policy::Fixed</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
@@ -674,7 +674,7 @@ QPushButton:hover {
         <item>
          <spacer name="verticalSpacer_4">
           <property name="orientation">
-           <enum>Qt::Vertical</enum>
+           <enum>Qt::Orientation::Vertical</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
@@ -824,7 +824,7 @@ QPushButton:hover {
           <item>
            <spacer name="horizontalSpacer">
             <property name="orientation">
-             <enum>Qt::Horizontal</enum>
+             <enum>Qt::Orientation::Horizontal</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -981,7 +981,7 @@ QTableWidget {
              <string notr="true">font: 700 18pt &quot;Verdana&quot;;</string>
             </property>
             <property name="text">
-             <string>Gestion de Usuarios</string>
+             <string>Gestion de Productos</string>
             </property>
            </widget>
            <widget class="QTableWidget" name="table_users">
@@ -1003,37 +1003,37 @@ QTableWidget {
             </column>
             <column>
              <property name="text">
-              <string>Rol</string>
+              <string>Descripcion</string>
              </property>
             </column>
             <column>
              <property name="text">
-              <string>Usuario</string>
+              <string>Costo de produccion</string>
              </property>
             </column>
             <column>
              <property name="text">
-              <string>Correo</string>
+              <string>Precio de venta</string>
              </property>
             </column>
             <column>
              <property name="text">
-              <string>Telefono</string>
+              <string>Stock</string>
              </property>
             </column>
             <column>
              <property name="text">
-              <string>Edad</string>
+              <string>Fecha de creacion</string>
              </property>
             </column>
             <column>
              <property name="text">
-              <string>Sexo</string>
+              <string>Categoria</string>
              </property>
             </column>
             <column>
              <property name="text">
-              <string>Dirección</string>
+              <string>.</string>
              </property>
             </column>
             <column>
@@ -1094,34 +1094,6 @@ QTableWidget {
               </widget>
              </item>
              <item>
-              <widget class="QComboBox" name="cb_filter_sex">
-               <property name="minimumSize">
-                <size>
-                 <width>150</width>
-                 <height>0</height>
-                </size>
-               </property>
-               <property name="placeholderText">
-                <string>Seleccionar sexo</string>
-               </property>
-               <item>
-                <property name="text">
-                 <string>Seleccionar sexo</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Masculino</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Femenino</string>
-                </property>
-               </item>
-              </widget>
-             </item>
-             <item>
               <widget class="QLineEdit" name="line_search_user">
                <property name="minimumSize">
                 <size>
@@ -1171,7 +1143,7 @@ QTableWidget {
 border: 2px solid #555;</string>
                </property>
                <property name="text">
-                <string>Crear Usuario</string>
+                <string>Crear Producto</string>
                </property>
                <property name="icon">
                 <iconset>
@@ -1265,6 +1237,45 @@ border: 2px solid #a22;</string>
              </item>
             </layout>
            </widget>
+           <widget class="QComboBox" name="cb_filter_sex">
+            <property name="geometry">
+             <rect>
+              <x>590</x>
+              <y>300</y>
+              <width>150</width>
+              <height>34</height>
+             </rect>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>150</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="placeholderText">
+             <string>Seleccionar sexo</string>
+            </property>
+            <item>
+             <property name="text">
+              <string>Seleccionar sexo</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Masculino</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Femenino</string>
+             </property>
+            </item>
+           </widget>
+           <zorder>cb_filter_sex</zorder>
+           <zorder>lb_title</zorder>
+           <zorder>table_users</zorder>
+           <zorder>layoutWidget</zorder>
+           <zorder>layoutWidget</zorder>
           </widget>
           <widget class="QWidget" name="page_boss">
            <widget class="QLabel" name="label_11">
