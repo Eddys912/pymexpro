@@ -2,11 +2,11 @@ from PyQt6.QtWidgets import QMessageBox
 from src.controllers.user_controller import UserController
 from src.utils.base_page import BasePage
 from src.views.buttons_actions import ButtonsAction
-from src.views.form_create_user import FormCreate
-from src.views.form_update_user import FormUpdate
+from src.views.forms.form_create_user import FormCreateUser
+from src.views.forms.form_update_user import FormUpdateUser
 
 
-class PageUser(BasePage):
+class PageUsers(BasePage):
     COLUMN_WIDTHS = [120, 100, 80, 150, 80, 10, 80, 120, 40]
     COLUMN_KEYS = [
         "full_name",
@@ -54,12 +54,12 @@ class PageUser(BasePage):
             )
 
     def form_create_user(self):
-        self.form_create = FormCreate(self.main, self.load_users)
+        self.form_create = FormCreateUser(self.main, self.load_users)
 
     def form_update_user(self, user_data):
         from PyQt6.QtCore import QDateTime
 
-        self.form_update = FormUpdate(self, user_data)
+        self.form_update = FormUpdateUser(self, user_data)
         if isinstance(user_data["birth_date"], str):
             user_data["birth_date"] = QDateTime.fromString(
                 user_data["birth_date"], "yyyy-MM-dd HH:mm:ss"
@@ -82,7 +82,13 @@ class PageUser(BasePage):
                 QMessageBox.warning(self.main, "Error", result["message"])
 
     def create_row_buttons(self, row_index, row_data):
-        return ButtonsAction(row_index, row_data, self)
+        return ButtonsAction(
+            row_index,
+            row_data,
+            self,
+            edit_method="form_update_user",
+            delete_method="delete_user",
+        )
 
     def fetch_filtered_data(self, filter_values, search_text):
         role = filter_values.get("role", "Seleccionar rol")
