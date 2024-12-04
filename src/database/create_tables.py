@@ -62,7 +62,7 @@ def create_table_products(conn):
                 stock INT DEFAULT 0,
                 category VARCHAR(50),
                 creation_date DATE NOT NULL,
-                is_active BOOLEAN DEFAULT TRUE
+                is_active TINYINT(1) DEFAULT 1
             )
         """
         )
@@ -85,11 +85,11 @@ def create_table_machines(conn):
                 machine_name VARCHAR(100) NOT NULL UNIQUE,
                 type VARCHAR(50) NOT NULL,
                 production_capacity INT,
-                status VARCHAR(20) DEFAULT 'Operativa',
+                status VARCHAR(20),
                 installation_date DATE NOT NULL,
                 last_maintenance DATE,
                 responsible VARCHAR(100),
-                is_active BOOLEAN DEFAULT TRUE
+                is_active TINYINT(1) DEFAULT 1
             )
         """
         )
