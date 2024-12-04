@@ -43,6 +43,12 @@
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_3">
+     <property name="horizontalSpacing">
+      <number>0</number>
+     </property>
+     <property name="verticalSpacing">
+      <number>4</number>
+     </property>
      <item row="0" column="0">
       <widget class="QWidget" name="icon_bar" native="true">
        <property name="minimumSize">
@@ -235,7 +241,7 @@ QPushButton:hover {
            </widget>
           </item>
           <item row="2" column="0">
-           <widget class="QPushButton" name="btn_boss">
+           <widget class="QPushButton" name="btn_machine">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -277,7 +283,7 @@ QPushButton:hover {
            </widget>
           </item>
           <item row="3" column="0">
-           <widget class="QPushButton" name="btn_machine">
+           <widget class="QPushButton" name="btn_boss">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -586,7 +592,7 @@ QPushButton:hover {
            </widget>
           </item>
           <item row="2" column="0">
-           <widget class="QPushButton" name="btn_boss_2">
+           <widget class="QPushButton" name="btn_machine_2">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -628,7 +634,7 @@ QPushButton:hover {
            </widget>
           </item>
           <item row="3" column="0">
-           <widget class="QPushButton" name="btn_machine_2">
+           <widget class="QPushButton" name="btn_boss_2">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -927,10 +933,10 @@ QPushButton:hover {
          <widget class="QStackedWidget" name="stackedWidget">
           <property name="geometry">
            <rect>
-            <x>10</x>
-            <y>10</y>
-            <width>961</width>
-            <height>721</height>
+            <x>0</x>
+            <y>0</y>
+            <width>971</width>
+            <height>581</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -965,30 +971,30 @@ QTableWidget {
 }</string>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>2</number>
           </property>
           <widget class="QWidget" name="page_users">
-           <widget class="QLabel" name="lb_title">
+           <widget class="QLabel" name="lb_title_user">
             <property name="geometry">
              <rect>
-              <x>10</x>
-              <y>0</y>
-              <width>325</width>
-              <height>35</height>
+              <x>20</x>
+              <y>10</y>
+              <width>266</width>
+              <height>29</height>
              </rect>
             </property>
             <property name="styleSheet">
              <string notr="true">font: 700 18pt &quot;Verdana&quot;;</string>
             </property>
             <property name="text">
-             <string>Gestion de Usuarios</string>
+             <string>Gestión de Usuarios</string>
             </property>
            </widget>
            <widget class="QTableWidget" name="table_users">
             <property name="geometry">
              <rect>
-              <x>10</x>
-              <y>160</y>
+              <x>20</x>
+              <y>170</y>
               <width>951</width>
               <height>401</height>
              </rect>
@@ -1050,8 +1056,8 @@ QTableWidget {
            <widget class="QWidget" name="layoutWidget">
             <property name="geometry">
              <rect>
-              <x>10</x>
-              <y>110</y>
+              <x>20</x>
+              <y>120</y>
               <width>761</width>
               <height>36</height>
              </rect>
@@ -1145,8 +1151,8 @@ QTableWidget {
            <widget class="QWidget" name="layoutWidget">
             <property name="geometry">
              <rect>
-              <x>11</x>
-              <y>51</y>
+              <x>21</x>
+              <y>61</y>
               <width>464</width>
               <height>40</height>
              </rect>
@@ -1156,7 +1162,7 @@ QTableWidget {
               <number>20</number>
              </property>
              <item>
-              <widget class="QPushButton" name="btn_add_student">
+              <widget class="QPushButton" name="btn_add_user">
                <property name="minimumSize">
                 <size>
                  <width>0</width>
@@ -1266,60 +1272,307 @@ border: 2px solid #a22;</string>
             </layout>
            </widget>
           </widget>
-          <widget class="QWidget" name="page_boss">
-           <widget class="QLabel" name="label_11">
-            <property name="geometry">
-             <rect>
-              <x>380</x>
-              <y>320</y>
-              <width>189</width>
-              <height>35</height>
-             </rect>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">font: 700 22pt &quot;Verdana&quot;;</string>
-            </property>
-            <property name="text">
-             <string>Jefes Turno</string>
-            </property>
-           </widget>
-          </widget>
+          <widget class="QWidget" name="page_products"/>
           <widget class="QWidget" name="page_machine">
-           <widget class="QLabel" name="label_10">
+           <widget class="QWidget" name="layoutWidget_2">
             <property name="geometry">
              <rect>
-              <x>400</x>
-              <y>300</y>
-              <width>154</width>
-              <height>35</height>
+              <x>20</x>
+              <y>120</y>
+              <width>761</width>
+              <height>36</height>
+             </rect>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_8">
+             <property name="spacing">
+              <number>20</number>
+             </property>
+             <item>
+              <widget class="QComboBox" name="cb_filter_type">
+               <property name="minimumSize">
+                <size>
+                 <width>150</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="placeholderText">
+                <string>Seleccionar tipo</string>
+               </property>
+               <item>
+                <property name="text">
+                 <string>Seleccionar tipo</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Cortadora</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Pulidora</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Pintadora</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Ensambladora</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="cb_filter_status">
+               <property name="minimumSize">
+                <size>
+                 <width>150</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="placeholderText">
+                <string>Seleccionar estatus</string>
+               </property>
+               <item>
+                <property name="text">
+                 <string>Seleccionar estatus</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Operativa</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Mantenimiento</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="line_search_machine">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="placeholderText">
+                <string>Buscar máquina</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QWidget" name="layoutWidget_3">
+            <property name="geometry">
+             <rect>
+              <x>21</x>
+              <y>61</y>
+              <width>464</width>
+              <height>40</height>
+             </rect>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_9">
+             <property name="spacing">
+              <number>20</number>
+             </property>
+             <item>
+              <widget class="QPushButton" name="btn_add_machine">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: #888;
+border: 2px solid #555;</string>
+               </property>
+               <property name="text">
+                <string>Crear Máquina</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../../public/icons/new_user.png</normaloff>../../public/icons/new_user.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>25</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="checkable">
+                <bool>true</bool>
+               </property>
+               <property name="autoExclusive">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btn_export_excel_2">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: #0a0;
+border: 2px solid #070;</string>
+               </property>
+               <property name="text">
+                <string>Exportar Excel</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../../public/icons/excel.png</normaloff>../../public/icons/excel.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>25</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="checkable">
+                <bool>true</bool>
+               </property>
+               <property name="autoExclusive">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btn_export_pdf_2">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: #d22;
+border: 2px solid #a22;</string>
+               </property>
+               <property name="text">
+                <string>Exportar PDF</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../../public/icons/pdf.png</normaloff>../../public/icons/pdf.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>25</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="checkable">
+                <bool>true</bool>
+               </property>
+               <property name="autoExclusive">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QLabel" name="lb_title_machine">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>10</y>
+              <width>278</width>
+              <height>29</height>
              </rect>
             </property>
             <property name="styleSheet">
-             <string notr="true">font: 700 22pt &quot;Verdana&quot;;</string>
+             <string notr="true">font: 700 18pt &quot;Verdana&quot;;</string>
             </property>
             <property name="text">
-             <string>Máquinas</string>
+             <string>Gestión de Máquinas</string>
             </property>
            </widget>
-          </widget>
-          <widget class="QWidget" name="page_products">
-           <widget class="QLabel" name="label_9">
+           <widget class="QTableWidget" name="table_machines">
             <property name="geometry">
              <rect>
-              <x>390</x>
-              <y>280</y>
-              <width>163</width>
-              <height>35</height>
+              <x>20</x>
+              <y>170</y>
+              <width>951</width>
+              <height>401</height>
              </rect>
             </property>
-            <property name="styleSheet">
-             <string notr="true">font: 700 22pt &quot;Verdana&quot;;</string>
+            <property name="alternatingRowColors">
+             <bool>true</bool>
             </property>
-            <property name="text">
-             <string>Productos</string>
-            </property>
+            <column>
+             <property name="text">
+              <string>Nombre</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Tipo</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Capacidad</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Responsable</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Estatus</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Instalación</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Mantenimiento</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Activo</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Acciones</string>
+             </property>
+            </column>
            </widget>
           </widget>
+          <widget class="QWidget" name="page_boss"/>
          </widget>
         </widget>
        </item>
@@ -1364,9 +1617,9 @@ border: 2px solid #a22;</string>
    </hints>
   </connection>
   <connection>
-   <sender>btn_boss_2</sender>
+   <sender>btn_machine_2</sender>
    <signal>toggled(bool)</signal>
-   <receiver>btn_boss</receiver>
+   <receiver>btn_machine</receiver>
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -1380,9 +1633,9 @@ border: 2px solid #a22;</string>
    </hints>
   </connection>
   <connection>
-   <sender>btn_machine_2</sender>
+   <sender>btn_boss_2</sender>
    <signal>toggled(bool)</signal>
-   <receiver>btn_machine</receiver>
+   <receiver>btn_boss</receiver>
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -1444,9 +1697,9 @@ border: 2px solid #a22;</string>
    </hints>
   </connection>
   <connection>
-   <sender>btn_boss</sender>
+   <sender>btn_machine</sender>
    <signal>toggled(bool)</signal>
-   <receiver>btn_boss_2</receiver>
+   <receiver>btn_machine_2</receiver>
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -1460,9 +1713,9 @@ border: 2px solid #a22;</string>
    </hints>
   </connection>
   <connection>
-   <sender>btn_machine</sender>
+   <sender>btn_boss</sender>
    <signal>toggled(bool)</signal>
-   <receiver>btn_machine_2</receiver>
+   <receiver>btn_boss_2</receiver>
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
