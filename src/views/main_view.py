@@ -2,8 +2,8 @@ import os
 from PyQt6 import uic
 from src.utils.export_excel import ExportExcel
 from src.utils.export_pdf import ExportPDF
-from src.views.page_machine import PageMachine
-from src.views.page_users import PageUser
+from src.views.page_machines import PageMachines
+from src.views.page_users import PageUsers
 
 
 class Main:
@@ -18,10 +18,10 @@ class Main:
         self.main.icon_bar.setHidden(True)
 
     def setup_pages(self):
-        self.page_user = PageUser(self.main, self.main.table_users)
+        self.page_user = PageUsers(self.main, self.main.table_users)
         self.page_user.setup_ui()
 
-        self.page_machine = PageMachine(self.main, self.main.table_machines)
+        self.page_machine = PageMachines(self.main, self.main.table_machines)
         self.page_machine.setup_ui()
 
     def setup_buttons(self):
@@ -31,10 +31,10 @@ class Main:
         self.export_excel = ExportExcel(
             self.main.table_users, self.main, "Reporte de Usuarios"
         )
-        self.export_pdf = ExportPDF(
+        self.export_pdf_2 = ExportPDF(
             self.main.table_machines, self.main, "Reporte de Máquinas"
         )
-        self.export_excel = ExportExcel(
+        self.export_excel_2 = ExportExcel(
             self.main.table_machines, self.main, "Reporte de Máquinas"
         )
         button_groups = [
@@ -50,8 +50,11 @@ class Main:
         ]
         self.connect_buttons(button_groups)
         self.main.btn_add_user.clicked.connect(self.page_user.form_create_user)
+        self.main.btn_add_machine.clicked.connect(self.page_machine.form_create_machine)
         self.main.btn_export_excel.clicked.connect(self.export_excel.export_to_excel)
         self.main.btn_export_pdf.clicked.connect(self.export_pdf.export_to_pdf)
+        self.main.btn_export_excel_2.clicked.connect(self.export_excel_2.export_to_excel)
+        self.main.btn_export_pdf_2.clicked.connect(self.export_pdf_2.export_to_pdf)
 
         self.main.btn_add_user.clicked.connect(self.page_user.load_users)
         self.main.btn_add_machine.clicked.connect(self.page_machine.load_machines)
