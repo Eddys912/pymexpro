@@ -290,7 +290,7 @@ border: 2px solid #500;</string>
           </property>
           <property name="minimumDateTime">
            <datetime>
-            <hour>6</hour>
+            <hour>12</hour>
             <minute>0</minute>
             <second>0</second>
             <year>1800</year>
@@ -342,7 +342,7 @@ border: 2px solid #500;</string>
            <string/>
           </property>
           <property name="placeholderText">
-           <string>Seleccionar sexo</string>
+           <string>Seleccionar categoria</string>
           </property>
           <item>
            <property name="text">
@@ -419,7 +419,7 @@ border: 2px solid #500;</string>
            <cursorShape>PointingHandCursor</cursorShape>
           </property>
           <property name="placeholderText">
-           <string>Seleccionar rol</string>
+           <string>Seleccionar descripcion</string>
           </property>
           <item>
            <property name="text">
