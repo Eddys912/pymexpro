@@ -5,7 +5,7 @@ from src.controllers.user_controller import UserController
 
 class FormCreateUser:
     def __init__(self, main_window, on_user_created):
-        self.user_page = uic.loadUi("src/views/form_create_user.ui")
+        self.user_page = uic.loadUi("src/views/forms/form_create_user.ui")
         self.user_page.show()
         self.user_controller = UserController()
         self.main_window = main_window
