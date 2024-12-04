@@ -135,7 +135,7 @@ border: 2px solid #500;</string>
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>41</x>
@@ -406,12 +406,12 @@ border: 2px solid #500;</string>
           </property>
           <property name="minimumDateTime">
            <datetime>
-            <hour>18</hour>
+            <hour>0</hour>
             <minute>0</minute>
             <second>0</second>
             <year>1800</year>
             <month>1</month>
-            <day>2</day>
+            <day>3</day>
            </datetime>
           </property>
           <property name="currentSection">
@@ -474,7 +474,7 @@ border: 2px solid #500;</string>
           </property>
           <property name="minimumDateTime">
            <datetime>
-            <hour>12</hour>
+            <hour>18</hour>
             <minute>0</minute>
             <second>0</second>
             <year>1800</year>
