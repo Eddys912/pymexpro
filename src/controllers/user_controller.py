@@ -51,7 +51,6 @@ class UserController:
 
         validators = [
             (UFV.validate_email, user_data["email"]),
-            (UFV.validate_phone, user_data["phone"]),
             (UFV.validate_gender, user_data["gender"]),
             (UFV.validate_birth_date, user_data["birth_date"]),
         ]

@@ -63,7 +63,7 @@ class FormCreate:
                 )
                 return False
 
-        if user_data["gender"] not in ["Masculino", "Femenino"]:
+        if user_data["gender"] not in ["Decoracion", "Dormitorio"]:
             QMessageBox.warning(self.user_page, "Error", "Seleccione un género válido.")
             return False
 
@@ -73,7 +73,7 @@ class FormCreate:
             )
             return False
 
-        if not user_data["phone"].isdigit() or len(user_data["phone"]) != 10:
+        if not user_data["phone"].isdigit() or len(user_data["phone"]) != 1:
             QMessageBox.warning(
                 self.user_page,
                 "Error",

@@ -56,7 +56,7 @@ QLineEdit, QComboBox, QDateEdit {
     <rect>
      <x>20</x>
      <y>20</y>
-     <width>315</width>
+     <width>451</width>
      <height>29</height>
     </rect>
    </property>
@@ -64,7 +64,7 @@ QLineEdit, QComboBox, QDateEdit {
     <string notr="true">font: 700 18pt &quot;Verdana&quot;;</string>
    </property>
    <property name="text">
-    <string>Ingresar nuevo usuario</string>
+    <string>Ingresar nuevo producto</string>
    </property>
   </widget>
   <widget class="Line" name="line">
@@ -77,7 +77,7 @@ QLineEdit, QComboBox, QDateEdit {
     </rect>
    </property>
    <property name="orientation">
-    <enum>Qt::Horizontal</enum>
+    <enum>Qt::Orientation::Horizontal</enum>
    </property>
   </widget>
   <widget class="QWidget" name="layoutWidget">
@@ -140,7 +140,7 @@ border: 2px solid #500;</string>
     <rect>
      <x>40</x>
      <y>77</y>
-     <width>473</width>
+     <width>489</width>
      <height>451</height>
     </rect>
    </property>
@@ -194,7 +194,7 @@ border: 2px solid #500;</string>
         <item>
          <widget class="QLabel" name="label_3">
           <property name="text">
-           <string>Apellido</string>
+           <string>.</string>
           </property>
          </widget>
         </item>
@@ -225,7 +225,7 @@ border: 2px solid #500;</string>
         <item>
          <widget class="QLabel" name="label_9">
           <property name="text">
-           <string>Usuario</string>
+           <string>Costo produccion</string>
           </property>
          </widget>
         </item>
@@ -255,7 +255,7 @@ border: 2px solid #500;</string>
         <item>
          <widget class="QLabel" name="label_4">
           <property name="text">
-           <string>Fecha nacimiento</string>
+           <string>Fecha creacion</string>
           </property>
          </widget>
         </item>
@@ -283,14 +283,14 @@ border: 2px solid #500;</string>
            <bool>false</bool>
           </property>
           <property name="buttonSymbols">
-           <enum>QAbstractSpinBox::UpDownArrows</enum>
+           <enum>QAbstractSpinBox::ButtonSymbols::UpDownArrows</enum>
           </property>
           <property name="showGroupSeparator" stdset="0">
            <bool>false</bool>
           </property>
           <property name="minimumDateTime">
            <datetime>
-            <hour>0</hour>
+            <hour>6</hour>
             <minute>0</minute>
             <second>0</second>
             <year>1800</year>
@@ -299,7 +299,7 @@ border: 2px solid #500;</string>
            </datetime>
           </property>
           <property name="currentSection">
-           <enum>QDateTimeEdit::DaySection</enum>
+           <enum>QDateTimeEdit::Section::DaySection</enum>
           </property>
           <property name="calendarPopup">
            <bool>true</bool>
@@ -323,7 +323,7 @@ border: 2px solid #500;</string>
         <item>
          <widget class="QLabel" name="label_10">
           <property name="text">
-           <string>Sexo</string>
+           <string>Categoria</string>
           </property>
          </widget>
         </item>
@@ -342,16 +342,26 @@ border: 2px solid #500;</string>
            <string/>
           </property>
           <property name="placeholderText">
-           <string>Seleccionar sexo</string>
+           <string>Seleccionar categoria</string>
           </property>
           <item>
            <property name="text">
-            <string>Masculino</string>
+            <string>Muebles</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>Femenino</string>
+            <string>Almacenaje</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Dormitorio</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Decoracion</string>
            </property>
           </item>
          </widget>
@@ -373,7 +383,7 @@ border: 2px solid #500;</string>
         <item>
          <widget class="QLabel" name="label_7">
           <property name="text">
-           <string>Telefono</string>
+           <string>Stock</string>
           </property>
          </widget>
         </item>
@@ -403,7 +413,7 @@ border: 2px solid #500;</string>
         <item>
          <widget class="QLabel" name="label_12">
           <property name="text">
-           <string>Rol</string>
+           <string>Descripcion</string>
           </property>
          </widget>
         </item>
@@ -419,16 +429,36 @@ border: 2px solid #500;</string>
            <cursorShape>PointingHandCursor</cursorShape>
           </property>
           <property name="placeholderText">
-           <string>Seleccionar rol</string>
+           <string>Seleccionar descripcion</string>
           </property>
           <item>
            <property name="text">
-            <string>Operador</string>
+            <string>Mesa para comedor</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>Jefe de Turno</string>
+            <string>Silla ligera</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Estante</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Escritorio ergonomico</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Mesa pequeña</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Lampara moderna</string>
            </property>
           </item>
          </widget>
@@ -445,7 +475,7 @@ border: 2px solid #500;</string>
       <item>
        <widget class="QLabel" name="label_8">
         <property name="text">
-         <string>Correo electrónico</string>
+         <string>Precio de venta</string>
         </property>
        </widget>
       </item>
@@ -460,12 +490,12 @@ border: 2px solid #500;</string>
        <number>0</number>
       </property>
       <property name="sizeConstraint">
-       <enum>QLayout::SetDefaultConstraint</enum>
+       <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
       </property>
       <item>
        <widget class="QLabel" name="label_6">
         <property name="text">
-         <string>Domicilio</string>
+         <string>Estado (Listo o en proceso)</string>
         </property>
        </widget>
       </item>
@@ -480,19 +510,19 @@ border: 2px solid #500;</string>
        <number>0</number>
       </property>
       <property name="sizeConstraint">
-       <enum>QLayout::SetDefaultConstraint</enum>
+       <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
       </property>
       <item>
        <widget class="QLabel" name="label_11">
         <property name="text">
-         <string>Contraseña</string>
+         <string>Contraseña jefe</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QLineEdit" name="line_input_password">
         <property name="echoMode">
-         <enum>QLineEdit::Password</enum>
+         <enum>QLineEdit::EchoMode::Password</enum>
         </property>
        </widget>
       </item>
