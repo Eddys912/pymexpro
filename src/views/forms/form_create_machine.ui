@@ -43,7 +43,7 @@ QPushButton {
 
 QLineEdit, QComboBox, QDateEdit {
 	font: 8pt &quot;Verdana&quot;;
-	padding: 8px 10px;
+	padding: 8px 20px;
 	border: 1px solid #d1d1d1;
 	border-radius: 10px;
 }
@@ -135,7 +135,7 @@ border: 2px solid #500;</string>
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>40</x>
@@ -236,7 +236,7 @@ border: 2px solid #500;</string>
       <item>
        <widget class="QLineEdit" name="line_input_responsible">
         <property name="echoMode">
-         <enum>QLineEdit::Password</enum>
+         <enum>QLineEdit::Normal</enum>
         </property>
        </widget>
       </item>
@@ -244,6 +244,9 @@ border: 2px solid #500;</string>
     </item>
     <item row="1" column="0">
      <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <property name="spacing">
+       <number>6</number>
+      </property>
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_8">
         <property name="spacing">
@@ -341,6 +344,9 @@ border: 2px solid #500;</string>
     </item>
     <item row="2" column="0">
      <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <property name="spacing">
+       <number>6</number>
+      </property>
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_11">
         <property name="spacing">
@@ -384,7 +390,7 @@ border: 2px solid #500;</string>
           </property>
           <property name="minimumDateTime">
            <datetime>
-            <hour>12</hour>
+            <hour>18</hour>
             <minute>0</minute>
             <second>0</second>
             <year>1800</year>
@@ -452,7 +458,7 @@ border: 2px solid #500;</string>
           </property>
           <property name="minimumDateTime">
            <datetime>
-            <hour>6</hour>
+            <hour>12</hour>
             <minute>0</minute>
             <second>0</second>
             <year>1800</year>
