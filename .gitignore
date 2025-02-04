@@ -1,0 +1,20 @@
+# Variables de entorno
+.env
+
+# Python general
+__pycache__/
+*.py[cod]
+*.pyo
+*.pdb
+*.log
+*.tmp
+*.swp
+*.bak
+
+# PyQt6 y recursos generados
+*.qrc
+*.pyproj
+*.ui.py
+*.qrc.py
+build/
+dist/
