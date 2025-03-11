@@ -1,7 +1,10 @@
-# Variables de entorno
+# Environment variables
 .env
 
-# Python general
+# Virtual envionment
+venv/
+
+# General python files
 __pycache__/
 *.py[cod]
 *.pyo
@@ -11,7 +14,7 @@ __pycache__/
 *.swp
 *.bak
 
-# PyQt6 y recursos generados
+# PyQt6 and generated resources
 *.qrc
 *.pyproj
 *.ui.py
